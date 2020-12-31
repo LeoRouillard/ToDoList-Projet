@@ -88,7 +88,7 @@ const AjouterTache = (props) => {
                 <Text style={styles.titre}>Statut de la tâche :</Text>
                 <Picker
                     selectedValue={tache.check}
-                    style={{width: 150, marginLeft:120,borderWidth: 1, borderColor: 'black', borderRadius: 4}}
+                    style={{width: 150, borderWidth: 1, borderColor: 'black', borderRadius: 4}}
                     onValueChange={(itemValue, itemIndex) => handleSetTache('check', itemValue)}
                 >
                    <Picker.Item label="À faire" value='afaire' />

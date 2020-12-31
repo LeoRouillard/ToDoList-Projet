@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12fc0f29-1c2a-4a00-ba28-3a3885e6f567" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AjouterScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/AjouterScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AjouterTache.js" beforeDir="false" afterPath="$PROJECT_DIR$/AjouterTache.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DoneScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/DoneScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EnCoursScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/EnCoursScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Liste.js" beforeDir="false" afterPath="$PROJECT_DIR$/Liste.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ToDoScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
