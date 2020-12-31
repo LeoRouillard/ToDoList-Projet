@@ -4,20 +4,20 @@ import { useIsFocused } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import { Picker } from '@react-native-picker/picker';
 
-// permet d'enregistrer un objet dans la mémoire locale
+// permet d'enregistrer un objet dans la mémoire
 const storeData = async (value) => {
     try {
         const jsonValue = JSON.stringify(value)
-        await AsyncStorage.setItem('aabb', jsonValue)
+        await AsyncStorage.setItem('liste_taches', jsonValue)
     } catch (e) {
         console.log("Erreur storeData")
     }
 }
 
-// permet de récupérer un objet enregistré dans la mémoire locale
+// permet de récupérer un objet enregistré dans la mémoire
 const getData = async () => {
     try {
-        const jsonValue = await AsyncStorage.getItem('aabb')
+        const jsonValue = await AsyncStorage.getItem('liste_taches')
         return jsonValue != null ? JSON.parse(jsonValue) : [];
     } catch(e) {
         console.log("Erreur getData")
@@ -26,17 +26,17 @@ const getData = async () => {
 
 const AjouterTache = (props) => {
 
-    // permet de savoir quand on change d'onglet
+    // permet de savoir lorsque l'on change d'onglet
     const isFocused = useIsFocused();
 
-    // correspond à une tâche avec son nom, sa description et son état actuel
+    // correspond à une tâche avec son nom, sa description et son statut actuel (encours, termine, afaire)
     const [tache, setTache] = useState({
         nom: "",
         desc: "",
         check: 'afaire'
     })
 
-    // correspond à la liste des tâches afin de calculer l'id de la nouvelle tâche à ajouter
+    // correspond à la liste des tâches (afin de calculer l'id de la nouvelle tâche à ajouter)
     const [liste, setListe] = useState([])
 
     // permet de mettre à jour les informations d'une tâche en fonction des informations entrées par l'utilisateur
@@ -47,7 +47,7 @@ const AjouterTache = (props) => {
     // permet d'ajouter une tâche à la liste des tâches
     // calcul du nouvel id en récupérant l'id du dernier élément de la liste
     // mise à jour de la liste des tâches
-    // enregistrement dans la mémoire locale et les informations de la tâche remise à zéro
+    // enregistrement dans la mémoire et les informations de la tâche remise à zéro
     const addTache = () => {
         var newId = 0;
         if (liste.length != 0) {
@@ -62,7 +62,7 @@ const AjouterTache = (props) => {
         setTache({nom: "", desc: "", check: 'afaire'})
     }
 
-    // dès lors que on change d'onglet, la liste des tâches est raffraichie
+    // dès lorsque l'on change d'onglet, la liste des tâches est rafraichie
     useEffect(() => {
         const fetchData = async () => {
             const data = await getData();
@@ -71,6 +71,7 @@ const AjouterTache = (props) => {
         fetchData();
     }, [isFocused]);
 
+    // partie visuelle de l'ajout de tâche
     return (
         <View style={styles.container}>
             <Text style={styles.titre}>Nom de la tâche :</Text>
@@ -87,7 +88,7 @@ const AjouterTache = (props) => {
                 <Text style={styles.titre}>Statut de la tâche :</Text>
                 <Picker
                     selectedValue={tache.check}
-                    style={{width: 150, borderWidth: 1, borderColor: 'black', borderRadius: 4}}
+                    style={{width: 150, marginLeft:120,borderWidth: 1, borderColor: 'black', borderRadius: 4}}
                     onValueChange={(itemValue, itemIndex) => handleSetTache('check', itemValue)}
                 >
                    <Picker.Item label="À faire" value='afaire' />
@@ -98,13 +99,13 @@ const AjouterTache = (props) => {
             <Button
                 onPress={() => addTache()}
                 title='Ajouter'
-                color="#74b9ff"
+                color="#00BFFF"
             />
         </View>
     );
 }
 
-// permet de donner un style aux éléments de l'application
+// style de l'application
 const styles = StyleSheet.create({
     container: {
         marginTop:20,
@@ -124,4 +125,3 @@ const styles = StyleSheet.create({
 });
 
 export { AjouterTache };
-

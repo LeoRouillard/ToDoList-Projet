@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Liste } from './Liste'
 
 // correspond à l'onglet "terminée"
-// création de la partie visuelle et appel de la liste gérant les tâches
+// création de la partie visuelle et appel du composant Liste permettant de gérer la liste des tâches
 const DoneScreen = (props) => {
     return (
         <View style={styles.container}>
@@ -13,6 +13,7 @@ const DoneScreen = (props) => {
     );
 }
 
+// style de l'application
 const styles = StyleSheet.create({
     container: {
         marginTop:35,
@@ -20,7 +21,6 @@ const styles = StyleSheet.create({
         marginBottom:50
     },
 });
-
 
 export { DoneScreen };
 

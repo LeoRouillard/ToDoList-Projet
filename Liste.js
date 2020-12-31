@@ -5,11 +5,11 @@ import { useIsFocused } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { Picker } from '@react-native-picker/picker';
 
-// permet d'enregistrer un objet dans la mémoire locale
+// permet d'enregistrer un objet dans la mémoire
 const storeData = async (value) => {
     try {
         const jsonValue = JSON.stringify(value)
-        await AsyncStorage.setItem('aabb', jsonValue)
+        await AsyncStorage.setItem('liste_taches', jsonValue)
     } catch (e) {
         console.log("Erreur storeData")
     }
@@ -20,34 +20,35 @@ const Liste = (props) => {
     // correspond à la liste des tâches
     const [liste, setListe] = useState([])
 
-    // permet de savoir quand on change d'onglet
+    // permet de savoir lorsque l'on change d'onglet
     const isFocused = useIsFocused();
 
-    // permet de savoir si la modal des détails des tâches est ouverte ou non
+    // permet de savoir si la modal du détails des tâches est ouverte ou non
     const [modalOpen, setModalOpen] = useState(false)
+    // permet de savoir si la modal pour changer le statut des tâches est ouverte ou non
     const [modalStatusOpen, setModalStatusOpen] = useState(false)
 
-    // correspond aux informations de la tâche ouverte dans la modal
+    // correspond à l'objet représentant la tâche ouverte dans la modal
     const [itemModal, setItemModal] = useState({})
 
-    // permet de récupérer un objet enregistré dans la mémoire locale
+    // permet de récupérer un objet enregistré dans la mémoire
     const getData = async () => {
         try {
-            const jsonValue = await AsyncStorage.getItem('aabb')
+            const jsonValue = await AsyncStorage.getItem('liste_taches')
             return jsonValue != null ? JSON.parse(jsonValue) : [];
         } catch(e) {
             console.log("Erreur getData")
         }
     }
 
-    // dès lors que on change d'onglet, la liste des tâches est raffraichie
+    // dès lorsque l'on change d'onglet, la liste des tâches est rafraichie
     useEffect(() => {
         getData().then(item => {
             setListe(item)
         })
     }, [isFocused]);
 
-    // sert à supprimer une tâche de la liste des tâches et d'effectuer la modification dans la mémoire locale
+    // sert à supprimer une tâche de la liste des tâches et d'effectuer la modification dans la mémoire
     const deleteTache = (tache) => {
         const liste_tmp = [...liste]
         const index = liste_tmp.indexOf(tache)
@@ -56,34 +57,36 @@ const Liste = (props) => {
         storeData(liste_tmp)
     }
 
-    // ouverture de la modal avec les informations de la tâche en question
+    // ouverture du modal avec les informations de la tâche en question
     const detailsTache = (item) => {
         setItemModal(item);
         setModalOpen(true);
     }
 
-    // ouverture de la modal permettrant de modifier le status de la tâche en question
+    // ouverture du modal permettant de modifier le statut de la tâche en question
     const modalStatus = (item) => {
         setItemModal(item);
         setModalStatusOpen(true);
     }
 
-    // fermeture de la modal correspondant au changement de status de la tâche
+    // fermeture du modal correspondant au changement de statut de la tâche
     const closeModalStatus = () => {
         setItemModal({});
         setModalStatusOpen(false);
     }
 
-    // fermeture de la modal (correspond aux détails d'une tâche)
+    // fermeture du modal correspond aux détails d'une tâche
     const closeDetailsTache = () => {
         setItemModal({});
         setModalOpen(false);
     }
 
-    // permet de changer le status d'une tâche (à faire <-> terminée) via une checkbox
-    // création de la nouvelle tâche avec les mêmes informations et l'inverse de son status actuel
+    // permet de changer le statut d'une tâche (à faire <-> en cours <-> terminée) via une liste déroulante
+    // récupération de l'object correspondant à la tâche actuellement ouverte dans le modal
+    // création de la nouvelle tâche avec les mêmes informations et son nouveau statut
     // suppression de l'ancienne tâche
-    // ajout de la nouvelle tâche avec le nouveau status et enregistrement dans la mémoire locale
+    // ajout de la nouvelle tâche avec le nouveau statut et enregistrement dans la mémoire
+    // si le statut est modifié, fermeture du modal
     const changeStatus = (itemValue) => {
         const valAncienne = itemModal.check
         const liste_tmp = [...liste]
@@ -103,6 +106,7 @@ const Liste = (props) => {
         setItemModal(object)
     }
 
+    // partie visuelle de la liste des tâches
     return (
         <View>
 
@@ -176,7 +180,7 @@ const Liste = (props) => {
     );
 }
 
-// permet de donner un style aux éléments de l'application
+// style de l'application
 const styles = StyleSheet.create({
     titreModal: {
         fontSize: 17,

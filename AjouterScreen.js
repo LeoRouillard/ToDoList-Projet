@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { AjouterTache } from './AjouterTache';
 
 // correspond à l'onglet "ajouter une tâche"
-// création de la partie visuelle et appel du composant "AjouterTache" qui permet de gérer la partie fonctionnelle
+// création de la partie visuelle et appel du composant AjouterTache permettant de gérer la partie fonctionnelle d'ajout et de création de tâche
 const AjouterScreen = (props) => {
     return (
         <View style={styles.container}>
@@ -13,6 +13,7 @@ const AjouterScreen = (props) => {
     );
 }
 
+// style de l'application
 const styles = StyleSheet.create({
     container: {
         marginTop:35,

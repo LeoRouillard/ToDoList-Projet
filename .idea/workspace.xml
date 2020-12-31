@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12fc0f29-1c2a-4a00-ba28-3a3885e6f567" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AjouterScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/AjouterScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AjouterTache.js" beforeDir="false" afterPath="$PROJECT_DIR$/AjouterTache.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DoneScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/DoneScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EnCoursScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/EnCoursScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Liste.js" beforeDir="false" afterPath="$PROJECT_DIR$/Liste.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/Navigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ToDoScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/ToDoScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,5 +47,15 @@
       <updated>1609357723228</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="100" y="100" width="1336" height="624" key="AVDManager" timestamp="1609416062687">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="100" y="100" width="1336" height="624" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1609416062687" />
+    <state x="426" y="189" key="run.anything.popup" timestamp="1609418490871">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="426" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1609418490871" />
   </component>
 </project>
